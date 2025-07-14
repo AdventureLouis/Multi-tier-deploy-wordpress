@@ -1,0 +1,38 @@
+# Terraform system files
+.terraform/
+.terraform/*
+*.tfstate
+*.tfstate.*
+*.tfvars
+*.tfvars.json
+crash.log
+crash.*.log
+*.tfplan
+*.tfplan.*
+.terraformrc
+terraform.rc
+
+# Override files
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Sensitive or large files
+*.csv
+*.bak
+*.tar.gz
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db

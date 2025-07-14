@@ -2,6 +2,8 @@
 #Create VPC
 resource "aws_vpc" "dev" {
     cidr_block = "10.0.0.0/16"
+     enable_dns_hostnames = true
+     enable_dns_support   = true
     tags = {
       Name = "dev vpc"
     }
@@ -12,6 +14,7 @@ resource "aws_vpc" "dev" {
 resource "aws_subnet" "public-subnet1-eu-west-1a" {
     vpc_id = aws_vpc.dev.id
     cidr_block = "10.0.0.0/20"
+    availability_zone = "eu-west-1a"
     tags = {
         Name = "public_subnet1"
     }
@@ -22,6 +25,7 @@ resource "aws_subnet" "public-subnet1-eu-west-1a" {
 resource "aws_subnet" "public-subnet2-eu-west-1b" {
     vpc_id = aws_vpc.dev.id
     cidr_block = "10.0.16.0/20"
+    availability_zone = "eu-west-1b"
     tags = {
         Name = "public_subnet2"
     }
@@ -41,6 +45,7 @@ resource "aws_subnet" "public-subnet3-eu-west-1c" {
 resource "aws_subnet" "private-subnet1-west-1a" {
     vpc_id = aws_vpc.dev.id
     cidr_block = "10.0.128.0/20"
+    availability_zone = "eu-west-1a"
     tags = {
         Name = "private_subnet1"
     }
@@ -50,6 +55,7 @@ resource "aws_subnet" "private-subnet1-west-1a" {
 resource "aws_subnet" "private-subnet2-west-1b" {
     vpc_id = aws_vpc.dev.id
     cidr_block = "10.0.144.0/20"
+    availability_zone = "eu-west-1b"
     tags = {
         Name = "private_subnet2"
     }
@@ -139,8 +145,6 @@ resource "aws_route_table_association" "private_subnet3_rt" {
     subnet_id = aws_subnet.private-subnet3-west-1c.id
     route_table_id = aws_route_table.private_rt_1.id
 }
-
-
 
 
 

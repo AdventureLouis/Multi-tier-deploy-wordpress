@@ -1,5 +1,5 @@
 
-AWS deployment by leveraging the power of Infrastructure as Code (IaC) with Terraform!
+Multi-tier wordpress deployment in AWS  leveraging the power of Infrastructure as Code (IaC) with Terraform!
 <br>
 In this project I automated the entire process using Terraform.
 <br>
